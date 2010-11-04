@@ -1,0 +1,47 @@
+NAME
+
+    WWW::DHL::Detail - Perl module for the DHL online tracking service with details.
+
+SYNOPSIS
+
+	use WWW::DHL::Detail;
+	my($newdata,$other) = dhlcheck('paketnumber','de');#de or en for text in german or english
+
+	foreach my $key (keys %$other){# shipnumber, lastchange, laststatus, status, to, from, statustext
+		print $key . ": " . ${$other}{$key} . "\n";
+	}
+	print "\nDetails:\n";
+
+	foreach my $key (@{$newdata}){
+		#foreach my $key2 (keys %{$key}){#datum, ort, daten
+		#	print ${$key}{$key2};
+		#	print "\t";
+		#}
+
+		print ${$key}{datum};
+		print "\t";
+		print ${$key}{ort};
+		print "\t";
+		print ${$key}{daten};
+		print "\n";
+	}
+
+DESCRIPTION
+
+WWW::DHL::Detail - Perl module for the DHL online tracking service with details.
+
+AUTHOR
+
+    Stefan Gipper <stefanos@cpan.org>, http://www.coder-world.de/
+
+COPYRIGHT
+
+	WWW::DHL::Detail is Copyright (c) 2010 Stefan Gipper
+	All rights reserved.
+
+	This program is free software; you can redistribute
+	it and/or modify it under the same terms as Perl itself.
+
+SEE ALSO
+
+    perl(1)
