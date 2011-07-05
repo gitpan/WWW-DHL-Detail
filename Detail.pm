@@ -4,7 +4,7 @@ use strict;
 use Exporter;
 our @ISA = qw/Exporter/;
 our @EXPORT = qw/dhlcheck/;
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 use LWP::Simple;
 
 sub dhlcheck {
@@ -18,7 +18,9 @@ sub dhlcheck {
 	my($detail) = ($data =~ /<table border="0" cellspacing="0" class="full eventList">.*<tbody>(.*?)<\/tbody>/);
 	while($detail =~ /<tr>(.*?)<\/tr>/ig){
 		my $detailone = $1;
-		my($datum) = ($detailone =~ /<td class="event_date">\s*(.*?)\s*(?:h|Uhr)\s*<\/td>/);
+		#my($datum) = ($detailone =~ /<td class="event_date">\s*(.*?)\s*(?:h|Uhr)\s*<\/td>/);#old from 0.1
+		my($datum) = ($detailone =~ /<td class="event_date">\s*.*?([^<>]+?)\s*(?:h|Uhr).*?\s*<\/td>/);#new in 0.2
+
 		my($ort) = ($detailone =~ /<td class="location">.*?<div class="overflow">\s*(.*?)\s*<\/div>.*?<\/td>/);
 		my($daten) = ($detailone =~ /<td class="status lasttd">.*?<div class="overflow">\s*(.*?)\s*<\/div>.*?<\/td>/);
 		my %details;
@@ -120,7 +122,7 @@ WWW::DHL::Detail - Perl module for the DHL online tracking service with details.
 
 =head1 COPYRIGHT
 
-	WWW::DHL::Detail is Copyright (c) 2010 Stefan Gipper
+	WWW::DHL::Detail is Copyright (c) 2011 Stefan Gipper
 	All rights reserved.
 
 	This program is free software; you can redistribute
