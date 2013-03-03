@@ -1,7 +1,7 @@
 # http://module-build.sourceforge.net/META-spec.html
 #
 name:         WWW-DHL-Detail
-version:      0.1
+version:      0.3
 version_from: Detail.pm
 installdirs:  site
 requires:

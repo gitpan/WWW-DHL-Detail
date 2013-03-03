@@ -32,12 +32,9 @@ WWW::DHL::Detail - Perl module for the DHL online tracking service with details.
 
 AUTHOR
 
-    Stefan Gipper <stefanos@cpan.org>, http://www.coder-world.de/
+    -
 
 COPYRIGHT
-
-	WWW::DHL::Detail is Copyright (c) 2010 Stefan Gipper
-	All rights reserved.
 
 	This program is free software; you can redistribute
 	it and/or modify it under the same terms as Perl itself.

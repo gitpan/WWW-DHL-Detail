@@ -4,7 +4,7 @@ use strict;
 use Exporter;
 our @ISA = qw/Exporter/;
 our @EXPORT = qw/dhlcheck/;
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 use LWP::Simple;
 
 sub dhlcheck {
@@ -118,12 +118,9 @@ WWW::DHL::Detail - Perl module for the DHL online tracking service with details.
 
 =head1 AUTHOR
 
-    Stefan Gipper <stefanos@cpan.org>, http://www.coder-world.de/
+    -
 
 =head1 COPYRIGHT
-
-	WWW::DHL::Detail is Copyright (c) 2011 Stefan Gipper
-	All rights reserved.
 
 	This program is free software; you can redistribute
 	it and/or modify it under the same terms as Perl itself.
